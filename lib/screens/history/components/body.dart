@@ -68,7 +68,7 @@ class _BodyState extends State<Body> {
                               ),
                             ),
                             Text(
-                              "2 000 000",
+                              "200 000 000",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w900,

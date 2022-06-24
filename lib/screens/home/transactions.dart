@@ -49,23 +49,93 @@ class _TransactionScreenState extends State<TransactionScreen> {
                     return Card(
                       elevation: 2,
                       margin: const EdgeInsets.all(5),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
                       child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                const CircleAvatar(
-                                  backgroundColor:
-                                      Color.fromRGBO(43, 43, 54, 54),
-                                  child: FaIcon(
-                                      FontAwesomeIcons.moneyBillTransfer),
+                        padding: const EdgeInsets.all(8),
+                        child: ListTile(
+                          // ignore: avoid_unnecessary_containers
+                          leading: Container(
+                            child: const CircleAvatar(
+                              backgroundColor: Color.fromRGBO(43, 43, 54, 54),
+                              child: FaIcon(FontAwesomeIcons.moneyBillTransfer),
+                            ),
+                          ),
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text(
+                                'Débité',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                const SizedBox(
-                                  width: 5,
+                              ),
+                              Text(
+                                '-100 000 000',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w900,
                                 ),
-                                const Text(
-                                  'Débité',
+                              ),
+                            ],
+                          ),
+                          subtitle: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text(
+                                "date ",
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  fontStyle: FontStyle.italic,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                "Lun 26 juil 2022",
+                                style: TextStyle(
+                                  fontStyle: FontStyle.italic,
+                                  fontSize: 10,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
+              // SizedBox(
+              //   height: MediaQuery.of(context).size.height * 0.7,
+              // ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/*
+                           
+    Row(
+        children: [
+           const CircleAvatar(
+            backgroundColor:
+            Color.fromRGBO(43, 43, 54, 54),
+            child: FaIcon(
+            FontAwesomeIcons.moneyBillTransfer),
+                        ),
+            const SizedBox(
+            width: 5,
+                     ),
+            const Text(
+            'Débité',
                                   style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
@@ -108,20 +178,4 @@ class _TransactionScreenState extends State<TransactionScreen> {
                                 ),
                               ],
                             ),
-                          ],
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                ),
-              ),
-              // SizedBox(
-              //   height: MediaQuery.of(context).size.height * 0.7,
-              // ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+*/

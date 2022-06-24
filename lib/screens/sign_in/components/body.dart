@@ -18,6 +18,7 @@ class _BodyState extends State<Body> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           const SizedBox(
             height: 80,
@@ -82,7 +83,6 @@ class _BodyState extends State<Body> {
               buttonColor: Colors.blue,
               minWidth: MediaQuery.of(context).size.width,
               height: 40,
-
               // ignore: deprecated_member_use
               child: RaisedButton(
                 onPressed: () async {
@@ -99,7 +99,7 @@ class _BodyState extends State<Body> {
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           const HeaderScreen()
         ],

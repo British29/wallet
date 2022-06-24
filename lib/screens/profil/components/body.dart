@@ -19,7 +19,7 @@ class _BodyState extends State<Body> {
 
   Widget textfield({@required hintText}) {
     return Material(
-      elevation: 3,
+      elevation: 2,
       shadowColor: Colors.grey,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),

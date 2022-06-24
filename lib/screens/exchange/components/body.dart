@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portefeuille/screens/depotRetrait/depot_retrait_screen.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 class Body extends StatefulWidget {
@@ -11,6 +12,8 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   int? _toggleValue = 0;
+
+  String? _montant;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +47,6 @@ class _BodyState extends State<Body> {
                   });
                 }),
           ),
-
           const SizedBox(
             height: 50,
           ),
@@ -59,6 +61,9 @@ class _BodyState extends State<Body> {
                 Padding(
                   padding: const EdgeInsets.only(left: 15, right: 15),
                   child: TextFormField(
+                    onChanged: (value) {
+                      _montant = value;
+                    },
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'Ce champs est vide';
@@ -118,7 +123,17 @@ class _BodyState extends State<Body> {
 
               // ignore: deprecated_member_use
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DepotRetraitScreen(
+                        statut: _toggleValue!,
+                        montant: _montant!,
+                      ),
+                    ),
+                  );
+                },
                 child: (_toggleValue == 0)
                     ? const Text(
                         'Dépôt',

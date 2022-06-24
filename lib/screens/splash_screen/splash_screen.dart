@@ -1,30 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:portefeuille/screens/sign_in/sigin_screen.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreens extends StatefulWidget {
   static String routeName = "/";
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreens({Key? key}) : super(key: key);
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashScreens> createState() => _SplashScreensState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreensState extends State<SplashScreens> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        // ignore: avoid_unnecessary_containers
-        child: Container(
-          // ignore: deprecated_member_use
-          child: RaisedButton(
-            child: const Text("Voir"),
-            onPressed: () {
-              Navigator.pushNamed(context, SiginScreen.routeName);
-            },
-          ),
-        ),
+    return SplashScreenView(
+      navigateRoute: const SiginScreen(),
+      duration: 3000,
+      imageSize: 250,
+      imageSrc: "assets/images/img.png",
+      text: "Bienvenue sur le Wallet",
+      textType: TextType.ScaleAnimatedText,
+      textStyle: const TextStyle(
+        fontSize: 40.0,
       ),
+      backgroundColor: Colors.white,
     );
   }
 }
