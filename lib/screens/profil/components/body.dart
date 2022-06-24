@@ -102,6 +102,32 @@ class _BodyState extends State<Body> {
               )
             ],
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            // ignore: avoid_unnecessary_containers
+            child: ButtonTheme(
+              buttonColor: Colors.red,
+              minWidth: MediaQuery.of(context).size.width,
+              child: RaisedButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                elevation: 5,
+                onPressed: () {},
+                child: const Text(
+                  "Deconnexion",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

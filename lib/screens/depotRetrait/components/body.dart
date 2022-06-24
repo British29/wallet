@@ -19,7 +19,7 @@ class _BodyState extends State<Body> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(
-            height: 20,
+            height: 30, 
           ),
           Container(
             padding: const EdgeInsets.symmetric(

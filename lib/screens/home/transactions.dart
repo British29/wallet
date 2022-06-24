@@ -47,7 +47,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
                 child: ListView(
                   children: transactions.map<Widget>((String e) {
                     return Card(
-                      elevation: 2,
+                      elevation: 5,
                       margin: const EdgeInsets.all(5),
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
@@ -55,13 +55,17 @@ class _TransactionScreenState extends State<TransactionScreen> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(3),
                         child: ListTile(
                           // ignore: avoid_unnecessary_containers
                           leading: Container(
                             child: const CircleAvatar(
-                              backgroundColor: Color.fromRGBO(43, 43, 54, 54),
-                              child: FaIcon(FontAwesomeIcons.moneyBillTransfer),
+                              backgroundColor: Colors.white,
+                              child: FaIcon(
+                                FontAwesomeIcons.bitcoin,
+                                color: Colors.orange,
+                                size: 35,
+                              ),
                             ),
                           ),
                           title: Row(
@@ -70,15 +74,15 @@ class _TransactionScreenState extends State<TransactionScreen> {
                               Text(
                                 'Débité',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
                                 '-100 000 000',
                                 style: TextStyle(
-                                  color: Colors.red,
-                                  fontSize: 17,
+                                  color: Colors.black,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w900,
                                 ),
                               ),
@@ -86,21 +90,65 @@ class _TransactionScreenState extends State<TransactionScreen> {
                           ),
                           subtitle: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                "date ",
-                                style: TextStyle(
-                                  fontSize: 11,
-                                  fontStyle: FontStyle.italic,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            children: [
+                              Column(
+                                children: [
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  const Text(
+                                    "Frais ",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 11,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: const [
+                                          Text(
+                                            "Date",
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                              fontSize: 11,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
-                              Text(
-                                "Lun 26 juil 2022",
-                                style: TextStyle(
-                                  fontStyle: FontStyle.italic,
-                                  fontSize: 10,
-                                ),
+                              Column(
+                                children: const [
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    "+(1%)",
+                                    style: TextStyle(
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    "Lun 26 juil 2022",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -120,62 +168,3 @@ class _TransactionScreenState extends State<TransactionScreen> {
     );
   }
 }
-
-/*
-                           
-    Row(
-        children: [
-           const CircleAvatar(
-            backgroundColor:
-            Color.fromRGBO(43, 43, 54, 54),
-            child: FaIcon(
-            FontAwesomeIcons.moneyBillTransfer),
-                        ),
-            const SizedBox(
-            width: 5,
-                     ),
-            const Text(
-            'Débité',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.25,
-                                ),
-                                const Text(
-                                  '-100 000 000',
-                                  style: TextStyle(
-                                    color: Colors.red,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w900,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 45),
-                                  child: Text(
-                                    "date ",
-                                    style: TextStyle(
-                                      fontSize: 11,
-                                      fontStyle: FontStyle.italic,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  "Lun 26 juil 2022",
-                                  style: TextStyle(
-                                    fontStyle: FontStyle.italic,
-                                    fontSize: 10,
-                                  ),
-                                ),
-                              ],
-                            ),
-*/
